@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPEED READING TEST</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      max-height: 800px;
+      /* text-align: center; */
+      user-select: none;
+
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .divContainer {
+        padding-top: 25px;
+        padding-bottom: 50px;
+        text-align: center;
+        justify-content: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">SPEED READING TEST</h1>
+    <p id="result" style="text-align: center;">Dakikadaki Okunan Kelime Sayısı: 0</p>
+    <div class="divContainer"><button class="button" id="startButton" onclick="startRecognition()">Start</button></div>
+
+    <script>
+      function startRecognition() {
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/start_recognition", true);
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                  var result = xhr.responseText;
+                  document.getElementById("result").textContent = "Dakikadaki Okunan Kelime Sayısı: " + result;
+              }
+          };
+          xhr.send();
+      }
+  </script>
+    
+
+    <p>Yazarın küçüklüğünden beri çektiği hastalık onu hastahanelerden tiksindirmiştir. Fakat durumu ciddiyetini korumaktadır. Annesi ile kenar mahallelerin birinde virane ahşap bir evde yaşamaktadır.</p>
+    <p>Bir gün ameliyat olması gerektiğini öğrenip hastahaneden döndüğünde evde annesini bulamaz ama odanın halinden annesinin şiddetli bir baş ağrısı geçirdiğini anlar. O sırada annesi gelir. Yazar ise annesini üzmemek için ona gerçekleri anlatmaz. Kendi doktaruna gidip ona gözükmesi gerektiğini söyler. Annesi yazarın Erenköye gideceğini öğrenince paşanında onu merak ettiğini söyler. Ertesi gün yazar önce paşaya gider. Paşa ilk olarak sağlık durumunun nasıl olduğunu sorar yazar da kaçamak cevaplar vererek olayı geçiştirir. Daha sonra odaya Nüzhet gelir yazardan getirmesini istediği kitapları alır. Kızı gidince paşa yazara bir de doktor Ragıp Bey’ e görünmesini tavsiye eder. Paşanın uzaktan akrabası olan yazar küçük yaşlardan beri onunla konuşur, ona kitap okur. O akşam yine bir roman okumaktadır fakat paşa uyuyunca Nüzhet’ le birlikte beahçeye gider ve muhabbet ederler. Yazar on beş yaşında ve aralarında dört yaş olmasına rağmen Nüzhet’ i sevmektedir. Ancak onun da aynı duyguları hissetiğinden emin olmaz. Bahçede konuşurken doktor Ragıp’ ın Nüzhet’ i istediğini duyunca önce üzülür ama Nüzhet oralı olmayınca, duyduğu şüpheye rağmen keyfi yerine gelir. Daha sonra Nüzhet annesinin isteği üzerine uyumaya gider ve yazar da kendine olan tüm güvenini kaybeder.</p>
+    <p>Hastalığı onu normal yaşından çok daha olgun davranmaya sevk etmiştir. Doktorun ikazlarına rağmen baston kullanmayan yazar o gece yatakta yorgun ve acı içinde kıvranmaktadır. Henüz uyumadan Nüzhet yazarın evine uğrar ve uyuyamadığını bahane ederek tekrar koyu bir muhabbete başlarlar. Ertesi gün yazar erkenden doktara gideceğinden Nüzhet onun uyumasını ister. Fakat yazar ona karşı olan zaafiyetini daha fazla saklayamaz, onu kendisine çekip bir kere öper ve Nüzhet şaşkınlık içerisinde koşarak eve gider.</p>
+    <p>Sabah olunca yazar Kadıköy'e gider ve paşanın istediği kitapları alır ve sonra da annesine bir ay içerisinde gelemeyeceğini yazar. Oradan da doktora gider fakat operatörün dersi olduğundan görüşemezler. Operatörle akşama görüşebilen yazar ondan baston kullanması ve iyi yemesi ve dinlenmesi konusunda uyarı alır. İşi bitip köşke dönen yazar içeriye girdiğinde kendisinden gizli birşey konuşulduğunu anlar ve üzüntü içerisinde bahçeye oturmaya çıkar. Daha sonra Nüzhet gelir ve yazar içeri girdiğinde annesinin dolabın arkasında çıplak olduğunu söyleyerek onu rahatlatır. Fakat akşam Nurefşan ona gerçekleri yani Nüzhet ile doktor Ragıp’ın durumlarını konuştuklarını söyler. Yazar hayal kırıklığına uğrar ve Nüzhet’ in odasına konuşmaya girer. Nüzhet yine yazarı ikna eder. Daha sonra ikiside uyurlar.</p>
+    <p>Ertesi günü Nüzhet’ le bahçede geçiren yazar Nüzhet’ le cinsel yakınlaşmalara girer. O akşam doktor Ragıp yemeğe gelir ve yazar hiç oralı olmaz. Konukları gidince Paşa yazara doktor hakkında görüşlerini sorar o da Ragıp’ ı Nüzhet’ e yakıştıramadığını söyler bunu duyan yengesi de içinden yazara karşı kin tutar.</p>
+    <p>Bir gün yazar yengesinin Nüzhet’i mikroplara karşı uyardığını ve eşyalarımızı ayırdım dediğini duyar ve bunun üzerine evi terketme kararı alır. Ancak annesinin de o gün paşalara geleceğini duyması kararını değiştirmesine neden olur.</p>
+    <p>Hızla geçen günlerden sonra nihayet evine dönen yazarın ağrıları gün geçtikçe arttığından annesi onu fakülteye götürür. Operatör ona durumun ciddiyetini hatırlatır ve yerinden bile kıpırdamamasını ister. Evi birden kalabalıklaşan yazarın yakınları onu teselli etmeye çalışır. Tekrar fakülteye gittiğinde operatör bacağın kesilmesi gerektiğini söyler fakat buna razı olmayan yazar birden bayılıverir. Bundan etkilenen operatör kasaplardan farkı olmaları gerektiğini söyleyip yazara, üç aylık bir sürede bacağını kurtarmak için hastahanede kalması gerektiğini söyler. Yazar bunu kabul etmek zorunda kalır ve Dokuzuncu Hariciye Koğuşuna yatırılır. Burası ona hapishane gibi gelir ve ilk gecesi olaylı biter. Bu korkuya dayanamaz ve bütün gücüyle bağırıp çağırır. Zor geçen günlerin sonunda ameliyat günü gelir. Ameliyatı bitince yedinci pansumanda doktor bacağın kurtulduğun ancak yer basamayacağını söyler.</p>
+    <p>Daha sonra da Nüzhet’ ten gelen karttan Paşanın hastalandığını Nüzhet’ in de doktor Ragıp’ la nikahlanacağını öğrenir. Acılar içinde geçen günlerin sonunda annesi doktor Mithat ve arkadaşı onu hastahaneden taburcu ettirirler.</p>
+    <p>Peyami Safa</p>
+  </div>
+
+  <script>
+    // JavaScript code to handle microphone access and speed recognition goes here
+
+    const startButton = document.getElementById('startButton');
+
+    startButton.addEventListener('click', () => {
+      // Code to start microphone and speed recognition
+      // You can use Web Speech API or any other speech recognition library
+    });
+  </script>
+</body>
+
+</html>
