@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from speechCore import from_mic
+from .speechCore import from_mic
 
 app = Flask(__name__, template_folder="template")
 
@@ -13,7 +13,3 @@ def start_recognition():
 
     print(readText)
     return str(len(readText.split(" ")))
-
-
-if __name__ == '__main__':
-    app.run(debug=True)    
